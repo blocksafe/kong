@@ -1,0 +1,46 @@
+# _format_version: "1.1"
+
+# hosts:
+# services:
+#   - name: core-api-service
+#     url: http://localhost:4000
+#     routes:
+#     - name: core-api-service
+#       paths:
+#       - /
+_format_version: "2.1"
+_transform: true
+
+services:
+- name: carbonstream
+  url: http://localhost:4000
+  # plugins:
+  # - name: key-auth
+  routes:
+  - name: core-api-route
+    paths:
+    - /
+    strip_path: false
+    hosts:
+    - localhost
+    - api.kaamwallay.com
+    - www.kaamwallay.com
+    - api.neurasynaptics.com
+    - www.neurasynaptics.com
+
+# - name: main-landing-page-service
+#   url: http://localhost:4000
+#   # plugins:
+#   # - name: key-auth
+#   routes:
+#   - name: landing-page-route
+#     paths:
+#     - /
+#     strip_path: false
+#     hosts:
+#     - www.kaamwallay.com
+#     - kaamwallay.com
+# consumers:
+# - username: my-user
+#   keyauth_credentials:
+#   - key: my-key
