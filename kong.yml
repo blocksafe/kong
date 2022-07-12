@@ -25,9 +25,36 @@ services:
     - localhost
     - api.kaamwallay.com
     - www.kaamwallay.com
-    - api.neurasynaptics.com
-    - www.neurasynaptics.com
+    - api.blocksafe.digital
+    - www.blocksafe.digital
+    - blocksafe.digital
 
+- name: admin
+  url: http://localhost:4300
+  # plugins:
+  # - name: key-auth
+  routes:
+  - name: admin-route
+    paths:
+    - /
+    strip_path: false
+    hosts:
+    - localhost
+    - admin.blocksafe.digital
+
+- name: landing
+  url: http://localhost:4100
+  # plugins:
+  # - name: key-auth
+  routes:
+  - name: landing-route
+    paths:
+    - /
+    strip_path: false
+    hosts:
+    - localhost
+    - www.blocksafe.digital  
+    - blocksafe.digital
 # - name: main-landing-page-service
 #   url: http://localhost:4000
 #   # plugins:
